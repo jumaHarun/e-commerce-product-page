@@ -14,29 +14,19 @@ function ProductDesc() {
     return (
         <section className="product-desc pall-1">
             <div className="container">
-                <p className="company clr-orange">{company}</p>
-                <h1 className="bold">{title}</h1>
-                <p className="desc">{description}</p>
+                <p className="company bold clr-orange">{company}</p>
+                <h1 className="title bold">{title}</h1>
+                <p className="desc clr-gray pbottom-1">{description}</p>
 
-                <div className="price-wrapper flex">
+                <div className="price-wrapper flex bold">
                     <h2 className="discounted-price">
                         {getCurrencyLocale(discountedPrice)}
                     </h2>
                     <span className="discount clr-orange"> {discount}%</span>
-                    <p className="price">{getCurrencyLocale(price)}</p>
+                    <p className="price clr-gray">{getCurrencyLocale(price)}</p>
                 </div>
             </div>
         </section>
     );
 }
 export default ProductDesc;
-/*
-{
-    "company": "Sneaker Company",
-    "title": "Fall Limited Edition Sneakers",
-    "description": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
-    "price": "250",
-    "discount": "50",
-    "discountedPrice": "125"
-}
-*/
