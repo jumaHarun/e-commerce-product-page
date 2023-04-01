@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'KumbhSans-Regular';
+    src: url('./assets/fonts/KumbhSans-Regular.ttf');
+}
+
 /* CSS RESET - Thanks https://piccalil.li/blog/a-modern-css-reset/ */
 
 *,
@@ -60,4 +65,6 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+
+    font-family: 'KumbhSans-Regular', Verdana, Geneva, Tahoma, sans-serif;
 }

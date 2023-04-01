@@ -1,4 +1,98 @@
+@font-face {
+    font-family: 'KumbhSans-Bold';
+    src: url('./assets/fonts/KumbhSans-Bold.ttf');
+}
+
+:root {
+    /* Primary */
+    --orange: hsl(26, 100%, 55%);
+    --pale-orange: hsl(25, 100%, 94%);
+
+    /* Neutral */
+    --very-dark-blue: hsl(220, 13%, 13%);
+    --dark-grayish-blue: hsl(219, 9%, 45%);
+    --grayish-blue: hsl(220, 14%, 75%);
+    --lght-grayish-blue: hsl(223, 64%, 98%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%); /* with 75% opacity for lightbox background */
+}
+
+/* Utility Classes */
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.pline-1 {
+    padding-inline: 1em;
+}
+
+.pblock-1 {
+    padding-block: 1em;
+}
+
+.pall-1 {
+    padding: 1em;
+}
+
+.center-all {
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+.bold {
+    font-family: 'KumbhSans-Bold', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Typography */
+
+/* Layout */
+.container {
+    max-width: 576px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.nav .container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-list {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: var(--white);
+    border: 1px solid magenta;
+}
+
+.nav-logo,
+.nav-options {
+    gap: 1em;
+}
+
+.user {
+    width: 30px;
+}
+
 /* 
+x-small < 576px
+Small >= 576px
+Medium >= 768px
+Large >= 992px
+x-large >= 1200px
+xx-large >= 1400px
+
 # Front-end Style Guide
 
 ## Layout
