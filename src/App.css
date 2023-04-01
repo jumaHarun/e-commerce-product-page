@@ -64,6 +64,10 @@
     font-family: 'KumbhSans-Bold', Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.clr-orange {
+    color: var(--orange);
+}
+
 /* Typography */
 .nav a {
     font-family: 'KumbhSans-Bold', Verdana, Geneva, Tahoma, sans-serif;
