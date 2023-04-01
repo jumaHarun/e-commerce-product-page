@@ -1,4 +1,9 @@
 @font-face {
+    font-family: 'KumbhSans-Regular';
+    src: url('./assets/fonts/KumbhSans-Regular.ttf');
+}
+
+@font-face {
     font-family: 'KumbhSans-Bold';
     src: url('./assets/fonts/KumbhSans-Bold.ttf');
 }
@@ -12,7 +17,7 @@
     --very-dark-blue: hsl(220, 13%, 13%);
     --dark-grayish-blue: hsl(219, 9%, 45%);
     --grayish-blue: hsl(220, 14%, 75%);
-    --lght-grayish-blue: hsl(223, 64%, 98%);
+    --light-grayish-blue: hsl(223, 64%, 98%);
     --white: hsl(0, 0%, 100%);
     --black: hsl(0, 0%, 0%); /* with 75% opacity for lightbox background */
 }
@@ -34,6 +39,10 @@
     padding-block: 1em;
 }
 
+.pbottom-1 {
+    padding-bottom: 1em;
+}
+
 .pall-1 {
     padding: 1em;
 }
@@ -47,11 +56,20 @@
     cursor: pointer;
 }
 
+.hide {
+    display: none;
+}
+
 .bold {
     font-family: 'KumbhSans-Bold', Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Typography */
+.nav a {
+    font-family: 'KumbhSans-Bold', Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--black);
+    text-decoration: none;
+}
 
 /* Layout */
 .container {
@@ -65,24 +83,65 @@
     align-items: center;
 }
 
-.nav-list {
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-
-    background-color: var(--white);
-    border: 1px solid magenta;
-}
-
 .nav-logo,
 .nav-options {
     gap: 1em;
 }
 
+.nav-links {
+    width: 100%;
+    background-color: hsla(0, 0%, 0%, 0.75);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.nav-list {
+    background-color: var(--white);
+    width: 50%;
+    height: 100%;
+    list-style-type: none;
+    padding: 1em 0 0 2em;
+}
+
+.ham-close {
+    margin-bottom: 3em;
+}
+
 .user {
     width: 30px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: clamp(768px, 100%, 1024px);
+    }
+
+    .nav a {
+        color: var(--grayish-blue);
+        font-family: 'KumbhSans-Regular', Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .nav-links {
+        position: relative;
+        display: unset;
+        background-color: var(--white);
+        margin-left: 2em;
+    }
+
+    .nav-list {
+        display: flex;
+        gap: 1em;
+    }
+
+    .ham-close {
+        display: none;
+    }
+
+    .ham-icon {
+        display: none;
+    }
 }
 
 /* 
