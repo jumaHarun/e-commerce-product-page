@@ -1,4 +1,5 @@
 import productDetails from '../../productDetails.json';
+import AddToCart from '../AddToCart';
 
 function ProductDesc() {
     const { company, title, description, price, discount, discountedPrice } =
@@ -23,8 +24,12 @@ function ProductDesc() {
                         {getCurrencyLocale(discountedPrice)}
                     </h2>
                     <span className="discount clr-orange"> {discount}%</span>
-                    <p className="price clr-gray">{getCurrencyLocale(price)}</p>
+                    <p className="price clr-light-gray">
+                        {getCurrencyLocale(price)}
+                    </p>
                 </div>
+
+                <AddToCart />
             </div>
         </section>
     );

@@ -28,36 +28,36 @@ function ProductGallery() {
                 />
 
                 <div className="btn-wrapper">
-                    <button className="btn btn-prev icon" onClick={prevPhoto}>
+                    <button className="btn btn-prev icon grid" onClick={prevPhoto}>
                         <img src="/images/icon-previous.svg" alt="" />
                     </button>
 
-                    <button className="btn btn-next icon" onClick={nextPhoto}>
+                    <button className="btn btn-next icon grid" onClick={nextPhoto}>
                         <img src="/images/icon-next.svg" alt="" />
                     </button>
                 </div>
             </div>
 
-            <div className="gallery-thumbs hide">
-                <div className="thumb-wrapper">
+            <div className="gallery-thumbs hide pblock-1">
+                <div className="thumb-wrapper icon">
                     <img
                         src="/images/image-product-1-thumbnail.jpg"
                         alt="sneakers photo thumbnail 1"
                     />
                 </div>
-                <div className="thumb-wrapper">
+                <div className="thumb-wrapper icon">
                     <img
                         src="/images/image-product-2-thumbnail.jpg"
                         alt="sneakers photo thumbnail 2"
                     />
                 </div>
-                <div className="thumb-wrapper">
+                <div className="thumb-wrapper icon">
                     <img
                         src="/images/image-product-3-thumbnail.jpg"
                         alt="sneakers photo thumbnail 3"
                     />
                 </div>
-                <div className="thumb-wrapper">
+                <div className="thumb-wrapper icon">
                     <img
                         src="/images/image-product-4-thumbnail.jpg"
                         alt="sneakers photo thumbnail 4"

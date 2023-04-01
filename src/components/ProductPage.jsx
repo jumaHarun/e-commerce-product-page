@@ -3,7 +3,7 @@ import ProductGallery from './ProductComponents/ProductGallery';
 
 function ProductPage() {
     return (
-        <main className="main">
+        <main className='product-page grid'>
             <ProductGallery />
             <ProductDesc />
         </main>
