@@ -198,6 +198,10 @@
     background-color: transparent;
 }
 
+input[type='number'] {
+    appearance: textfield;
+}
+
 .input-wrapper input::-webkit-outer-spin-button,
 .input-wrapper input::-webkit-inner-spin-button {
     display: none;
