@@ -1,5 +1,5 @@
 import productDetails from '../../productDetails.json';
-import AddToCart from '../AddToCart';
+import AddToCart from '../CartComponents/AddToCart';
 
 function ProductDesc() {
     const { company, title, description, price, discount, discountedPrice } =
