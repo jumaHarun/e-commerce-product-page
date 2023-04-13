@@ -1,11 +1,15 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CartContext } from '../Context/CartContext';
 
 function Nav() {
+    const { cartItems } = useContext(CartContext);
+
     const [isToggled, setIsToggled] = useState(false);
 
     const toggleNav = () => {
         setIsToggled(!isToggled);
     };
+
     return (
         <nav className="nav pall-1">
             <div className="container flex">
@@ -57,7 +61,12 @@ function Nav() {
                 </div>
 
                 <div className="nav-options flex center-all">
-                    <div className="cart icon">
+                    <div className="cart-icon icon">
+                        {cartItems.length > 0 && (
+                            <span className="icon-number bold">
+                                {cartItems.length}
+                            </span>
+                        )}
                         <img src="\images\icon-cart.svg" alt="cart" />
                     </div>
 

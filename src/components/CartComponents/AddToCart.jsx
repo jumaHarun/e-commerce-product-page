@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { CartContext } from '../../Context/CartContext';
 
-function AddToCart() {
+function AddToCart({ item }) {
+    const { addToCart } = useContext(CartContext);
     const [cartQty, setCartQty] = useState(0);
 
     const plus = (num) => {
@@ -20,7 +22,7 @@ function AddToCart() {
     };
 
     return (
-        <div className="cart pblock-1 bold">
+        <div className="add-to-cart-wrapper pblock-1 bold">
             <div className="input-wrapper grid center-all">
                 <div className="icon minus" onClick={() => minus(cartQty)}>
                     <img src="/images/icon-minus.svg" alt="minus" />
@@ -40,12 +42,11 @@ function AddToCart() {
             </div>
 
             <div className="cart-btn grid">
-                <button className="add-to-cart-btn flex center-all icon">
-                    <img
-                        className="bg-white"
-                        src="/images/icon-cart-white.svg"
-                        alt="Add to cart"
-                    />
+                <button
+                    className="add-to-cart-btn flex center-all icon"
+                    onClick={() => addToCart({ item, qty:cartQty })}
+                >
+                    <img src="/images/icon-cart-white.svg" alt="Add to cart" />
                     Add to cart
                 </button>
             </div>

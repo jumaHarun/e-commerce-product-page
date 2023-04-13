@@ -1,9 +1,9 @@
-import productDetails from '../../productDetails.json';
+import { sneakers } from '../../productDetails.json';
 import AddToCart from '../CartComponents/AddToCart';
 
 function ProductDesc() {
     const { company, title, description, price, discount, discountedPrice } =
-        productDetails[0];
+        sneakers;
 
     const getCurrencyLocale = (str) => {
         return Number(str).toLocaleString('en-US', {
@@ -29,7 +29,7 @@ function ProductDesc() {
                     </p>
                 </div>
 
-                <AddToCart />
+                <AddToCart item={sneakers} />
             </div>
         </section>
     );

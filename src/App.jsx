@@ -1,4 +1,5 @@
 import './App.css';
+import { CartProvider } from './Context/CartContext';
 
 // components
 import Nav from './components/Nav';
@@ -7,8 +8,10 @@ import ProductPage from './components/ProductPage';
 function App() {
     return (
         <div className="App">
-            <Nav />
-            <ProductPage />
+            <CartProvider>
+                <Nav />
+                <ProductPage />
+            </CartProvider>
         </div>
     );
 }
