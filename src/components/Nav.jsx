@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { CartContext } from '../Context/CartContext';
 
 function Nav() {
-    const { cartItems } = useContext(CartContext);
+    const { cartState } = useContext(CartContext);
 
     const [isToggled, setIsToggled] = useState(false);
 
@@ -62,11 +62,9 @@ function Nav() {
 
                 <div className="nav-options flex center-all">
                     <div className="cart-icon icon">
-                        {cartItems.length > 0 && (
-                            <span className="icon-number bold">
-                                {cartItems.length}
-                            </span>
-                        )}
+                        <span className="icon-number bold">
+                            {cartState.totalItems >= 0 && cartState.totalItems}
+                        </span>
                         <img src="\images\icon-cart.svg" alt="cart" />
                     </div>
 

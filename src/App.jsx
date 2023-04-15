@@ -1,7 +1,7 @@
 import './App.css';
+
 import { CartProvider } from './Context/CartContext';
 
-// components
 import Nav from './components/Nav';
 import ProductPage from './components/ProductPage';
 
