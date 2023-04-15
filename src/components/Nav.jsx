@@ -63,7 +63,7 @@ function Nav() {
                 <div className="nav-options flex center-all">
                     <div className="cart-icon icon">
                         <span className="icon-number bold">
-                            {cartState.totalItems >= 0 && cartState.totalItems}
+                            {cartState.totalItems > 0 && cartState.totalItems}
                         </span>
                         <img src="\images\icon-cart.svg" alt="cart" />
                     </div>

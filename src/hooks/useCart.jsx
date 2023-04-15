@@ -12,11 +12,11 @@ const useCart = () => {
         dispatch({ type: 'REMOVE_FROM_CART', payload: item });
     };
 
-    const clearCart = () => {
+    const emptyCart = () => {
         dispatch({ type: 'EMPTY_CART' });
     };
 
-    return { cartState, addToCart, removeFromCart, clearCart };
+    return { cartState, addToCart, removeFromCart, emptyCart };
 };
 
 export default useCart;

@@ -1,30 +1,21 @@
 import { useContext, useState } from 'react';
 import { CartContext } from '../../Context/CartContext';
-// import { addToCart } from '../../Context/cartReducer';
 
 function AddToCart(item) {
+    const { addToCart } = useContext(CartContext);
+
     const [cartQty, setCartQty] = useState(0);
 
-    // const { dispatch } = useContext(CartContext);
-
-    // const addToCartHandler = (product) => {
-    //     dispatch(addToCart(product));
-    // };
-    
     const plus = () => {
-        if (cartQty >= 0) {
-            setCartQty((prev) => prev + 1);
-        }
+        setCartQty(cartQty + 1);
     };
 
     const minus = () => {
-        if (cartQty > 0) {
-            setCartQty((prev) => prev - 1);
-        }
+        return cartQty > 0 && setCartQty(cartQty - 1);
     };
 
     const handleInputChange = (target) => {
-        setCartQty(target.value);
+        console.log(target.value);
     };
 
     return (
@@ -37,8 +28,8 @@ function AddToCart(item) {
                     type="number"
                     name="cartInput"
                     id="cartInput"
-                    placeholder="0"
-                    value={cartQty}
+                    placeholder="1+"
+                    value={cartQty || ''}
                     aria-label="cart input"
                     onChange={(e) => handleInputChange(e.target)}
                 />
@@ -50,7 +41,7 @@ function AddToCart(item) {
             <div className="cart-btn grid">
                 <button
                     className="add-to-cart-btn flex center-all icon"
-                    onClick={() => addToCartHandler(item)}
+                    onClick={() => addToCart(item)}
                 >
                     <img src="/images/icon-cart-white.svg" alt="Add to cart" />
                     Add to cart

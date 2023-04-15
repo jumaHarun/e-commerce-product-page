@@ -1,16 +1,13 @@
-import { sneakers } from '../../productDetails.json';
+import json from '../../productDetails.json';
 import AddToCart from '../CartComponents/AddToCart';
+
+import {getCurrencyLocale} from '../../utilis'
 
 function ProductDesc() {
     const { company, title, description, price, discount, discountedPrice } =
-        sneakers;
+        json[0];
 
-    const getCurrencyLocale = (str) => {
-        return Number(str).toLocaleString('en-US', {
-            style: 'currency',
-            currency: 'USD',
-        });
-    };
+    
 
     return (
         <section className="product-desc pall-1">
@@ -29,7 +26,7 @@ function ProductDesc() {
                     </p>
                 </div>
 
-                <AddToCart item={sneakers} />
+                <AddToCart item={json[0]} />
             </div>
         </section>
     );
