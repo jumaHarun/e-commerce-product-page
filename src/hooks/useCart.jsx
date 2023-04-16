@@ -1,11 +1,13 @@
 import { useReducer } from 'react';
 import { cartReducer, initialState } from '../reducers/CartReducer';
+import { useState } from 'react';
 
 const useCart = () => {
     const [cartState, dispatch] = useReducer(cartReducer, initialState);
+    const [isShown, setIsShown] = useState(false);
 
-    const addToCart = (item) => {
-        dispatch({ type: 'ADD_TO_CART', payload: item });
+    const addToCart = (item, qty) => {
+        dispatch({ type: 'ADD_TO_CART', payload: item }, qty);
     };
 
     const removeFromCart = (item) => {
@@ -16,7 +18,14 @@ const useCart = () => {
         dispatch({ type: 'EMPTY_CART' });
     };
 
-    return { cartState, addToCart, removeFromCart, emptyCart };
+    return {
+        cartState,
+        addToCart,
+        removeFromCart,
+        emptyCart,
+        isShown,
+        setIsShown,
+    };
 };
 
 export default useCart;

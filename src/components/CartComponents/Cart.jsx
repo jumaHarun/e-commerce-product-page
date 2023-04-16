@@ -22,19 +22,24 @@ const Cart = () => {
         <div className="cart-basket">
             <h4>Cart</h4>
             <hr />
-            {cartState.totalItems === 0 ? (
-                <h4>Your cart is empty</h4>
-            ) : (
-                <div className="cart-details">
-                    {cartItemsHtml}
-                    <button
-                        className="add-to-cart-btn checkout-btn bold icon"
-                        onClick={() => handleCheckout()}
-                    >
-                        Checkout
-                    </button>
-                </div>
-            )}
+
+            <div className="cart-details">
+                {cartState.totalItems === 0 ? (
+                    <div className="grid center-all empty">
+                        <h4 className='clr-gray'>Your cart is empty.</h4>
+                    </div>
+                ) : (
+                    <>
+                        {cartItemsHtml}
+                        <button
+                            className="add-to-cart-btn checkout-btn bold icon"
+                            onClick={() => handleCheckout()}
+                        >
+                            Checkout
+                        </button>
+                    </>
+                )}
+            </div>
         </div>
     );
 };

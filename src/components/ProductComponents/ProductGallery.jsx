@@ -28,11 +28,14 @@ function ProductGallery() {
                 />
 
                 <div className="btn-wrapper">
-                    <button className="btn btn-prev icon grid" onClick={prevPhoto}>
+                    <button
+                        className="btn btn-prev icon grid"
+                        onClick={prevPhoto}
+                    >
                         <img src="/images/icon-previous.svg" alt="" />
                     </button>
 
-                    <button className="btn btn-next icon grid" onClick={nextPhoto}>
+                    <button className="btn btn-next icon" onClick={nextPhoto}>
                         <img src="/images/icon-next.svg" alt="" />
                     </button>
                 </div>

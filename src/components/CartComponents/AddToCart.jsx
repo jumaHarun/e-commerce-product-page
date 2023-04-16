@@ -18,6 +18,11 @@ function AddToCart(item) {
         console.log(target.value);
     };
 
+    const handleAddToCart = () => {
+        addToCart(item, cartQty);
+        setCartQty(0);
+    };
+
     return (
         <div className="add-to-cart-wrapper pblock-1 bold">
             <div className="input-wrapper grid center-all">
@@ -41,7 +46,8 @@ function AddToCart(item) {
             <div className="cart-btn grid">
                 <button
                     className="add-to-cart-btn flex center-all icon"
-                    onClick={() => addToCart(item)}
+                    onClick={handleAddToCart}
+                    disabled={!cartQty}
                 >
                     <img src="/images/icon-cart-white.svg" alt="Add to cart" />
                     Add to cart

@@ -2,12 +2,16 @@ import { useContext, useState } from 'react';
 import { CartContext } from '../Context/CartContext';
 
 function Nav() {
-    const { cartState } = useContext(CartContext);
+    const { cartState, isShown, setIsShown } = useContext(CartContext);
 
     const [isToggled, setIsToggled] = useState(false);
 
     const toggleNav = () => {
         setIsToggled(!isToggled);
+    };
+
+    const handleCartToggle = (state) => {
+        setIsShown(!state);
     };
 
     return (
@@ -61,7 +65,10 @@ function Nav() {
                 </div>
 
                 <div className="nav-options flex center-all">
-                    <div className="cart-icon icon">
+                    <div
+                        className="cart-icon icon"
+                        onClick={() => handleCartToggle(isShown)}
+                    >
                         <span className="icon-number bold">
                             {cartState.totalItems > 0 && cartState.totalItems}
                         </span>

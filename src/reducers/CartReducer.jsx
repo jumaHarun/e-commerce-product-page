@@ -8,6 +8,7 @@ const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_TO_CART':
             // check if item is already in cart
+
             const found = state.cartItems.find(
                 (item) => item.id === action.payload.id
             );
@@ -40,7 +41,7 @@ const cartReducer = (state = initialState, action) => {
         case 'REMOVE_FROM_CART':
             // find item in cart
             const itemToRemove = state.cartItems.find(
-                (item) => item.id === action.payload.id
+                (obj) => obj.item.id === action.payload.id
             );
 
             if (itemToRemove.quantity === 1) {
@@ -53,7 +54,9 @@ const cartReducer = (state = initialState, action) => {
                     ...state,
                     cartItems: newCartItems,
                     totalItems: state.totalItems - 1,
-                    // totalPrice: state.totalPrice - Number(itemToRemove)
+                    totalPrice:
+                        state.totalPrice -
+                        Number(itemToRemove.item.discountedPrice),
                 };
             } else {
                 // if quantity is more than 1, decrement quantity
@@ -62,16 +65,11 @@ const cartReducer = (state = initialState, action) => {
                 return {
                     ...state,
                     totalItems: state.totalItems - 1,
-                    // totalPrice: state.totalPrice - Number(itemToRemove)
+                    totalPrice:
+                        state.totalPrice -
+                        Number(itemToRemove.item.discountedPrice),
                 };
             }
-            break;
-        case 'INCREMENT_QTY':
-            console.log('incrementQty');
-            break;
-        case 'DECREMENT_QTY':
-            console.log('decrementQty');
-            break;
         case 'EMPTY_CART':
             return {
                 ...state,

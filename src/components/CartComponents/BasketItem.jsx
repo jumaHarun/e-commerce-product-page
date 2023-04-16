@@ -9,7 +9,7 @@ const BasketItem = ({ item, removeFromCart }) => {
     const { totalItems, totalPrice } = cartState;
 
     return (
-        <div className="basket-item grid">
+        <div className="basket-item grid clr-gray">
             <div className="detail-img">
                 <img src={`/images/${images[0]}.jpg`} alt="Cart item image" />
             </div>
@@ -18,7 +18,7 @@ const BasketItem = ({ item, removeFromCart }) => {
                 <p>{title}</p>
                 <p>
                     {getCurrencyLocale(discountedPrice)} x {totalItems}
-                    <span className="bold">
+                    <span className="bold clr-black">
                         {' '}
                         {getCurrencyLocale(totalPrice)}
                     </span>
