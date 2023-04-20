@@ -6,8 +6,8 @@ const useCart = () => {
     const [cartState, dispatch] = useReducer(cartReducer, initialState);
     const [isShown, setIsShown] = useState(false);
 
-    const addToCart = (item, qty) => {
-        dispatch({ type: 'ADD_TO_CART', payload: item }, qty);
+    const addToCart = (item, qty ) => {
+        dispatch({ type: 'ADD_TO_CART', payload: item, qty });
     };
 
     const removeFromCart = (item) => {

@@ -15,7 +15,7 @@ function AddToCart(item) {
     };
 
     const handleInputChange = (target) => {
-        console.log(target.value);
+        setCartQty(Number(target.value));
     };
 
     const handleAddToCart = () => {

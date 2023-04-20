@@ -15,27 +15,29 @@ const cartReducer = (state = initialState, action) => {
 
             if (found) {
                 // if item already exists, increment quantity
-                found.quantity += 1;
+                found.quantity += action.qty;
 
                 return {
                     ...state,
-                    totalItems: state.totalItems + 1,
+                    totalItems: state.totalItems + action.qty,
                     totalPrice:
-                        state.totalPrice + Number(found.item.discountedPrice),
+                        state.totalPrice +
+                        Number(found.item.discountedPrice * action.qty),
                 };
             } else {
                 // if item does not exist, add it to cart
                 const newItem = {
                     ...action.payload,
-                    quantity: 1,
+                    quantity: action.qty,
                 };
 
                 return {
                     ...state,
                     cartItems: [...state.cartItems, newItem],
-                    totalItems: state.totalItems + 1,
+                    totalItems: state.totalItems + action.qty,
                     totalPrice:
-                        state.totalPrice + Number(newItem.item.discountedPrice),
+                        state.totalPrice +
+                        Number(newItem.item.discountedPrice * action.qty),
                 };
             }
         case 'REMOVE_FROM_CART':
