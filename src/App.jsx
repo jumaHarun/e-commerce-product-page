@@ -1,19 +1,17 @@
+// import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
 import './App.css';
-// Components
+
 import Nav from './components/Nav';
+import Collection from './components/Collection';
 import ProductPage from './components/ProductPage';
-// Products 
-import products from './productsDetails.json';
 
 function App() {
-    const productPages = products.map((prod) => (
-        <ProductPage key={prod.id} product={prod} />
-    ));
-
     return (
         <div className="App">
             <Nav />
-            {productPages}
+            {/* <Collection /> */}
+            <ProductPage />
         </div>
     );
 }

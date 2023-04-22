@@ -3,8 +3,11 @@
     src: url('./assets/fonts/KumbhSans-Regular.ttf');
 }
 
-/* CSS RESET - Thanks https://piccalil.li/blog/a-modern-css-reset/ */
+:root {
+    --light-grayish-blue: hsl(223, 64%, 98%);
+}
 
+/* CSS RESET - Thanks https://piccalil.li/blog/a-modern-css-reset/ */
 *,
 *::before,
 *::after {
@@ -67,4 +70,5 @@ body {
     line-height: 1.5;
 
     font-family: 'KumbhSans-Regular', Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--light-grayish-blue);
 }
