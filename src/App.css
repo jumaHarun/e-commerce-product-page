@@ -252,6 +252,7 @@ input[type='number'] {
     z-index: 1;
     background-color: var(--white);
     height: 15em;
+    box-shadow: 3px 3px 10px 3px hsla(0, 0%, 0%, 0.3);
 
     border-radius: 7px;
     padding: 1em;
