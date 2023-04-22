@@ -1,18 +1,28 @@
 import { useContext } from 'react';
+
 import Cart from './CartComponents/Cart';
-import ProductDesc from './ProductComponents/ProductDesc';
-import ProductGallery from './ProductComponents/ProductGallery';
 import { CartContext } from '../Context/CartContext';
 
-function ProductPage() {
+import ProductDesc from './ProductComponents/ProductDesc';
+// import ProductGallery from './ProductComponents/ProductGallery';
+import LightBox from './ProductComponents/LightBox';
+
+import json from '../productsDetails.json';
+
+function ProductPage(product) {
     const { isShown } = useContext(CartContext);
 
     return (
-        <main className="product-page grid">
+        <div className="product-page grid">
             {isShown && <Cart />}
-            <ProductGallery />
-            <ProductDesc />
-        </main>
+            {/* <ProductGallery /> */}
+            {json.map((prod) => (
+                <>
+                    <LightBox key={prod.id} images={prod.images} />
+                    <ProductDesc key={prod.id} product={prod} />
+                </>
+            ))}
+        </div>
     );
 }
 export default ProductPage;

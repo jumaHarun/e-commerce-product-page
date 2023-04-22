@@ -1,6 +1,6 @@
 import BasketItem from './BasketItem';
 
-import json from '../../productDetails.json';
+import products from '../../productsDetails.json';
 
 import { useContext } from 'react';
 import { CartContext } from '../../Context/CartContext';
@@ -14,7 +14,7 @@ const Cart = () => {
         emptyCart();
     };
 
-    const cartItemsHtml = json.map((prod) => (
+    const cartItemsHtml = products.map((prod) => (
         <BasketItem key={prod.id} item={prod} removeFromCart={removeFromCart} />
     ));
 

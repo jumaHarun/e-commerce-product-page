@@ -1,13 +1,10 @@
-import json from '../../productDetails.json';
 import AddToCart from '../CartComponents/AddToCart';
 
-import {getCurrencyLocale} from '../../utilis'
+import { getCurrencyLocale } from '../../utilis';
 
-function ProductDesc() {
+function ProductDesc({ product }) {
     const { company, title, description, price, discount, discountedPrice } =
-        json[0];
-
-    
+        product;
 
     return (
         <section className="product-desc pall-1">
@@ -26,7 +23,7 @@ function ProductDesc() {
                     </p>
                 </div>
 
-                <AddToCart item={json[0]} />
+                <AddToCart item={product} />
             </div>
         </section>
     );
