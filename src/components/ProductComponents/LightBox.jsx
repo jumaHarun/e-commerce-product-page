@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
-const LightBox = () => {
+import { LightBoxThumbnails } from './LightBoxThumbnails';
+
+const LightBox = ({ images }) => {
     const [currPic, setCurrPic] = useState(1);
 
     const nextPhoto = () => {
@@ -42,42 +44,15 @@ const LightBox = () => {
             </div>
 
             <div className="gallery-thumbs hide pblock-1">
-                <div
-                    className="thumb-wrapper icon"
-                    onClick={() => setCurrPic(1)}
-                >
-                    <img
-                        src="/images/image-product-1-thumbnail.jpg"
-                        alt="sneakers photo thumbnail 1"
+                {images.map((img, i) => (
+                    <LightBoxThumbnails
+                        key={i}
+                        img={img}
+                        index={i}
+                        currPic={currPic}
+                        setCurrPic={setCurrPic}
                     />
-                </div>
-                <div
-                    className="thumb-wrapper icon"
-                    onClick={() => setCurrPic(2)}
-                >
-                    <img
-                        src="/images/image-product-2-thumbnail.jpg"
-                        alt="sneakers photo thumbnail 2"
-                    />
-                </div>
-                <div
-                    className="thumb-wrapper icon"
-                    onClick={() => setCurrPic(3)}
-                >
-                    <img
-                        src="/images/image-product-3-thumbnail.jpg"
-                        alt="sneakers photo thumbnail 3"
-                    />
-                </div>
-                <div
-                    className="thumb-wrapper icon"
-                    onClick={() => setCurrPic(4)}
-                >
-                    <img
-                        src="/images/image-product-4-thumbnail.jpg"
-                        alt="sneakers photo thumbnail 4"
-                    />
-                </div>
+                ))}
             </div>
         </section>
     );

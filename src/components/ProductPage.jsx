@@ -12,7 +12,7 @@ function ProductPage() {
     const { isShown } = useContext(CartContext);
 
     return (
-        <div>
+        <div className="product-page-wrapper">
             {isShown && <Cart />}
 
             {products.map((prod) => (
