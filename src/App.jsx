@@ -3,14 +3,12 @@
 import './App.css';
 
 import Nav from './components/Nav';
-import Collection from './components/Collection';
 import ProductPage from './components/ProductPage';
 
 function App() {
     return (
         <div className="App">
             <Nav />
-            {/* <Collection /> */}
             <ProductPage />
         </div>
     );

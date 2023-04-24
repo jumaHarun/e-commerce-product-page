@@ -12,7 +12,7 @@ function ProductPage() {
     const { isShown } = useContext(CartContext);
 
     return (
-        <div className="product-page-wrapper">
+        <main className="product-page-wrapper pblock-1">
             {isShown && <Cart />}
 
             {products.map((prod) => (
@@ -21,7 +21,7 @@ function ProductPage() {
                     <ProductDesc product={prod} />
                 </div>
             ))}
-        </div>
+        </main>
     );
 }
 

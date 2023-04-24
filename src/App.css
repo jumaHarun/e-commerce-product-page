@@ -137,16 +137,18 @@ button:disabled {
     margin-bottom: 3em;
 }
 
-.user {
-    width: 30px;
+.user,
+.cart-icon {
+    width: 40px;
+}
+
+.user:hover {
+    outline: 2px solid var(--orange);
+    border-radius: 50%;
 }
 
 .gallery-img {
     position: relative;
-}
-
-.gallery-img > img {
-    height: auto;
 }
 
 .btn {
@@ -216,6 +218,15 @@ input[type='number'] {
 .input-wrapper input::-webkit-outer-spin-button,
 .input-wrapper input::-webkit-inner-spin-button {
     display: none;
+}
+
+.add-to-cart-btn:hover,
+.minus:hover,
+.plus:hover,
+.add-to-cart-btn:focus-visible,
+.minus:focus-visible,
+.plus:focus-visible {
+    opacity: 0.5;
 }
 
 .plus {
@@ -337,13 +348,19 @@ input[type='number'] {
     }
 
     .nav .container {
-        border-bottom: 2px solid var(--light-grayish-blue);
-        margin-bottom: 2em;
+        border-bottom: 1px solid var(--grayish-blue);
+        padding-bottom: 1em;
     }
 
     .nav a {
-        color: var(--grayish-blue);
+        color: var(--dark-grayish-blue);
         font-family: 'KumbhSans-Regular', Verdana, Geneva, Tahoma, sans-serif;
+        padding-bottom: 1.9em;
+    }
+
+    .nav a:hover {
+        border-bottom: 5px solid var(--orange);
+        color: var(--black);
     }
 
     .nav-links {
@@ -365,7 +382,7 @@ input[type='number'] {
     }
 
     .product-page {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 370px 1fr;
         gap: 1em;
     }
 
@@ -418,7 +435,7 @@ input[type='number'] {
     }
 
     .cart-basket {
-        inset: -10% 0 0 auto;
+        inset: -5% 0 0 auto;
         max-width: 375px;
         width: 100%;
     }
@@ -430,52 +447,7 @@ input[type='number'] {
     }
 
     .product-page {
+        grid-template-columns: 450px 1fr;
         gap: 2em;
     }
 }
-
-/* 
-x-small < 576px
-Small >= 576px
-Medium >= 768px
-Large >= 992px
-x-large >= 1200px
-xx-large >= 1400px
-
-# Front-end Style Guide
-
-## Layout
-
-The designs were created to the following widths:
-
-- Mobile: 375px
-- Desktop: 1440px
-
-## Colors
-
-### Primary
-
-- Orange: hsl(26, 100%, 55%)
-- Pale orange: hsl(25, 100%, 94%)
-
-### Neutral
-
-- Very dark blue: hsl(220, 13%, 13%)
-- Dark grayish blue: hsl(219, 9%, 45%)
-- Grayish blue: hsl(220, 14%, 75%)
-- Light grayish blue: hsl(223, 64%, 98%)
-- White: hsl(0, 0%, 100%)
-- Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%)
-
-## Typography
-
-### Body Copy
-
-- Font size (paragraph): 16px
-
-### Font
-
-- Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
-- Weights: 400, 700
-
-*/
