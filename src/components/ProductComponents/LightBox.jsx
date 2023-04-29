@@ -31,14 +31,16 @@ const LightBox = ({ images }) => {
 
                 <div className="btn-wrapper">
                     <button
-                        className="btn btn-prev icon grid"
+                        className="btn btn-prev icon"
                         onClick={prevPhoto}
                     >
-                        <img src="/images/icon-previous.svg" alt="" />
+                        {/* <img src="/images/icon-previous.svg" alt="" /> */}
+                        <div className="bg-img"></div>
                     </button>
 
                     <button className="btn btn-next icon" onClick={nextPhoto}>
-                        <img src="/images/icon-next.svg" alt="" />
+                        {/* <img src="/images/icon-next.svg" alt="" /> */}
+                        <div className="bg-img"></div>
                     </button>
                 </div>
             </div>

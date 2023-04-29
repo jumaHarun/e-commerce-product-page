@@ -154,12 +154,13 @@ button:disabled {
 .btn {
     position: absolute;
     bottom: 50%;
-    border-radius: 50%;
-    border: 1px solid var(--white);
-}
 
-.btn img {
-    padding: 0.75em;
+    width: 3rem;
+    aspect-ratio: 1/1;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+
+    align-items: center;
 }
 
 .btn-prev {
@@ -169,6 +170,24 @@ button:disabled {
 .btn-next {
     right: 0;
     margin-right: 1em;
+}
+
+.bg-img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 1.5rem;
+    aspect-ratio: 1/1;
+    margin: 0 auto;
+}
+
+.btn-next .bg-img {
+    background-image: url('/images/icon-next.svg');
+    background-position: 75%;
+}
+
+.btn-prev .bg-img {
+    background-image: url('/images/icon-previous.svg');
+    background-position: 25%;
 }
 
 .title {
