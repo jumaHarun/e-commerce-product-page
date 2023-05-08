@@ -120,7 +120,7 @@ I will continue focusing on these issues in future projects.
 ## Author
 
 -   Website - [Juma Harun](https://jmambo.netlify.app/)
--   Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+
 -   Twitter - [@jumaH4run](https://www.twitter.com/jumaH4run)
 
 ## Acknowledgments
